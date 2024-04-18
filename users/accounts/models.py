@@ -7,6 +7,7 @@ class CustomUserManger(BaseUserManager):
         if not email :
             raise ValueError('the email Field is required')
         
+        
         email = self.normalize_email(email)
         user = self.model(email=email,**extra_fields)
         user.set_password(password)
@@ -33,7 +34,7 @@ class CustomUser(AbstractUser):
     date_joined = models.DateTimeField(auto_now_add=True)
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['email','username']
+    REQUIRED_FIELDS = ['username']
     objects = CustomUserManger()
     
     def __str__(self):
