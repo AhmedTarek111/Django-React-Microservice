@@ -8,4 +8,4 @@ class JobListCreateApi(ListCreateAPIView):
 
 class JobRetrieveUpdateDestroyApi(RetrieveUpdateDestroyAPIView):
     serializer_class = JobSerializer
-    queryset = Job.objects.all()
+    queryset = Job.objects.all()ja;slkdjf;laskjdf;laskdjf
